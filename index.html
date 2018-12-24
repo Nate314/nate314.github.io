@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
-		<meta http-equiv="refresh" content="0;url=https://nate314.github.io/site/home">
+		<title>nate314</title>
+		<script>
+			var nate314 = "https://nate314.github.io";
+			var loc = location.href;
+			var len = nate314.length;
+			var sub = loc.substr(len, loc.length - len);
+			var actual = nate314 + "/site" + sub;
+			location.href = actual;
+		</script>
 	</head>
 	<body>
 		<h1>
