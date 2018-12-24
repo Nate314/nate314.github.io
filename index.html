@@ -7,8 +7,12 @@
 			var loc = location.href;
 			var len = nate314.length;
 			var sub = loc.substr(len, loc.length - len);
-			var actual = nate314 + "/site" + sub;
-			location.href = actual;
+			if (sub.length <= 1) {
+				location.href = nate314 + "/site/home"
+			}
+			else {
+				location.href = nate314 + "/site" + sub;
+			}
 		</script>
 	</head>
 	<body>
