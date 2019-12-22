@@ -3,16 +3,24 @@
 	<head>
 		<title>nate314</title>
 		<script>
-			var nate314 = "https://nate314.github.io";
-			var loc = location.href;
-			var len = nate314.length;
-			var sub = loc.substr(len, loc.length - len);
-			if (sub.length <= 1) {
-				location.href = nate314 + "/site/home"
-			}
-			else {
-				location.href = nate314 + "/site" + sub;
-			}
+function getURL(loc) {
+    const nate314 = "https://nate314.github.io";
+    if (loc.includes(nate314)) {
+	const len = nate314.length;
+	const sub = loc.substr(len, loc.length - len);
+	if (sub.length <= 1) {
+	    return nate314 + "/site/home"
+	}
+	else {
+	    return nate314 + "/site" + sub;
+	}
+    } else {
+	if (loc.includes('games.nathan')) {
+	    return 'https://nate314.github.io/react-games/';
+	}
+    }
+}
+location.href = getURL(location.href);
 		</script>
 	</head>
 	<body>
